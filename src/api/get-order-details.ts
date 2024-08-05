@@ -21,7 +21,7 @@ export interface GetOrderDetailsResponse {
     product: {
       name: string
     }
-  }
+  }[]
 }
 
 export async function getOrderDetails({ orderId }: GetOrderDetailsParams) {

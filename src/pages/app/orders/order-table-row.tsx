@@ -27,7 +27,7 @@ export interface OrderTableRowProps {
 }
 
 export function OrderTableRow({ order }: OrderTableRowProps) {
-  const [idDetailsOpen, SetIsDetailsOpen] = useState(false)
+  const [idDetailsOpen, setIsDetailsOpen] = useState(false)
 
   const queryClient = useQueryClient()
 
@@ -87,7 +87,7 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
   return (
     <TableRow>
       <TableCell>
-        <Dialog open={idDetailsOpen} onOpenChange={SetIsDetailsOpen}>
+        <Dialog open={idDetailsOpen} onOpenChange={setIsDetailsOpen}>
           <DialogTrigger asChild>
             <Button variant="outline" size="xs">
               <Search className="h-3 w-3" />

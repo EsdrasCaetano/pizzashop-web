@@ -13,8 +13,8 @@ import {
   YAxis,
 } from 'recharts'
 import colors from 'tailwindcss/colors'
-import { date } from 'zod'
 
+// import { date } from 'zod'
 import { getDailyRevenueInPeriod } from '@/api/get-daily-revenue-in-period'
 import {
   Card,
@@ -47,7 +47,7 @@ export function RevenueChart() {
         receipt: chartItem.receipt / 100,
       }
     })
-  })
+  }, [dailyRevenueInPeriod])
 
   return (
     <Card className="col-span-6">

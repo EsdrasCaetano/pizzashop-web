@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import { Currency } from 'lucide-react'
 
+// import { Currency } from 'lucide-react'
 import { getOrderDetails } from '@/api/get-order-details'
 import { OrderStatus } from '@/components/order-status'
 import {
@@ -28,7 +28,8 @@ export interface OrderDetailsProps {
 
 export function OrderDetails({ orderId, open }: OrderDetailsProps) {
   const { data: order } = useQuery({
-    queryKey: ['orderId', 'orderId'],
+    // queryKey: ['orderId', 'orderId'],
+    queryKey: ['order', orderId],
     queryFn: () => getOrderDetails({ orderId }),
     enabled: open,
   })

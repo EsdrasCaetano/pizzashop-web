@@ -10,9 +10,13 @@ export interface GetManagedRestaurantResponse {
 }
 
 export async function getManagedRestaurant() {
-  const response = await api.get<GetManagedRestaurantResponse>(
-    '/managed-restaurant',
-  )
-
-  return response.data
+  try {
+    const response = await api.get<GetManagedRestaurantResponse>(
+      '/managed-restaurant',
+    )
+    return response.data
+  } catch (error) {
+    console.error('Erro ao buscar restaurante gerenciado:', error)
+    throw error
+  }
 }
