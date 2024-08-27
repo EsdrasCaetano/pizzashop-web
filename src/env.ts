@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-console.log(import.meta.env) // Verifique se as variáveis estão sendo lidas corretamente
+// console.log(import.meta.env) // Verifique se as variáveis estão sendo lidas corretamente
 
 export const envSchema = z.object({
   MODE: z.enum(['production', 'development', 'test']),
